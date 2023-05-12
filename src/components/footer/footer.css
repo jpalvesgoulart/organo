@@ -5,6 +5,7 @@
     background-size: cover;
     color: #fff;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     padding: 80px
