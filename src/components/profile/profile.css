@@ -1,5 +1,12 @@
 .profile {
+    position: relative;
     width: 280px;
+}
+
+.profile .delete{
+    position: absolute;
+    right: -10px;
+    top: -10px;
 }
 
 .profile .header {
@@ -19,19 +26,22 @@
     border-radius: 0px 0px 10px 10px;
     padding-top: 90px;
     padding-bottom: 40px;
+    color: #212121;
 }
 
 .profile .footer h4 {
+    width: 200px;
     color: #6278F7;
     font-size: 18px;
     line-height: 22px;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 8px;
 }
 
 .profile .footer h5 {
-    font-size: 18px;
+    width: 200px;
+    font-size: 16px;
     line-height: 22px;
-    color: #212121;
+    font-weight: 400;
     padding: 0 16px;
 }

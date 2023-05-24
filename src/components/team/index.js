@@ -1,13 +1,28 @@
 import Profile from '../profile'
 import './team.css'
+import hexToRgba from 'hex-to-rgba';
 
-const Team = (props) => {
+const Team = ({ profiles, color, changeColor, id, name, onDelete, onFavorite }) => {
     return(
-        (props.profiles.length > 0) &&
-        <section className='team' style={{ backgroundColor: props.secondaryColor }}>
-            <h3 style={{ borderColor: props.primaryColor }}>{props.name}</h3>
+        (profiles.length > 0) && 
+        <section className='team' style={{ backgroundColor: hexToRgba(color, '0.6') }}>
+            <input onChange={e => changeColor(e.target.value, id)} value={color} type='color' className='input-color' />
+            <h3 style={{ borderColor: color }}>{name}</h3>
             <div className='profiles'>
-                {props.profiles.map(profile => <Profile backgroundColor={props.primaryColor} key={profile.name} name={profile.name} image={profile.image} role={profile.role} />)}
+                {profiles.map((profile, i) => {
+                    return (
+                        <Profile 
+                            backgroundColor={color} 
+                            profile={profile} 
+                            key={i} 
+                            name={profile.name} 
+                            image={profile.image} 
+                            role={profile.role} 
+                            onDelete={onDelete} 
+                            onFavorite={onFavorite} 
+                        />
+                    )
+                })}
             </div>
         </section>
     )

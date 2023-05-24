@@ -1,16 +1,22 @@
 import './input.css'
 
-const Input = (props) => {
+const Input = ({ onAlter, label, value, required, placeholder, type = 'text' }) => {
     const onDigit = (e) => {
-        props.onAlter(e.target.value)
+        onAlter(e.target.value)
     }
 
     return (
-        <div className="input">
+        <div className={`input input-${type}`}>
             <label>
-                {props.label}
+                {label}
             </label>
-            <input value={props.value} onChange={onDigit} required={props.required} placeholder={props.placeholder}/>
+            <input 
+                type={type} 
+                value={value} 
+                onChange={onDigit} 
+                required={required} 
+                placeholder={placeholder}
+            />
         </div>
     )
 }

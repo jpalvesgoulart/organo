@@ -1,9 +1,18 @@
 .team {
+    position: relative;
     text-align: center;
     padding: 32px;
+    background-image: url('../../../public/img/fundo.png');
+}
+
+.team .input-color {
+    position: absolute;
+    top: 20px;
+    right: 50px;
 }
 
 .team h3 {
+    font-family: 'Prata', serif;
     font-size: 32px;
     border-bottom: 4px solid;
     display: inline-block;
